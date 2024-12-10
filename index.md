@@ -13,11 +13,15 @@ I am adding a test sentence here at 13:24 on 03/12/24.
 ### **Project Set-Up**
 I am using a VGA Colour stripes file to change the picture that is being generated onto the screen
 Summarise the project set-up and design flow. Include a screenshot of your own set-up, for example see the image of my Project Summary window below. Guideline 1 short paragraph.
+![Screenshot 2024-12-10 130838](https://github.com/user-attachments/assets/dd7d259b-340a-4bc8-baed-45240e5426dd)
 
-<img src="https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/images/VGAPrjSum.png">
 ### **Template Code**
 For the original colour stripes file, the module generates vertical stripes based on the row number on a VGA screen. Each stripe has a different color, cycling through black, blue, green, cyan, red, magenta, yellow, and white. The logic checks the row position (row) and determines the color to display for that row. The output colors are updated based on the clock, with asynchronous reset behavior to ensure the RGB values are initially set to black.
 Outline the structure and design of the Verilog code templates you were given. What do they do? Include reference to how a VGA interface works. Guideline: 2/3 short paragraphs, consider including screenshot(s).
+This is the waveform generated from the behavioural simulation after running simulation:
+
+![behavioural simulation](https://github.com/user-attachments/assets/b9391c8d-2ee5-4445-bd1a-e67f25fd5e9b)
+
 VGA Controller Module: This module generates the horizontal (hsync) and vertical (vsync) synchronization signals for the VGA display. It also produces the pixel_x and pixel_y signals to track the current pixel’s position on the screen. The horizontal sync pulse occurs every 800 pixels (for a 640x480 VGA resolution), and vertical sync happens every 525 lines. These signals are essential for properly aligning the display’s pixels.
 
 Pixel Generator Module: This module assigns RGB values for each pixel. It determines what color should be displayed at the given pixel position. For example, if pixel_x and pixel_y fall within the range of a specific image or color band, it outputs the corresponding RGB values. This module may contains a more complex image pattern generator (e.g., sun/moon) based on time or other conditions.
@@ -30,9 +34,12 @@ Explain the simulation process. Reference any important details, include a well-
  Some details to consider include ensuring the clock frequency matches the design’s timing requirements (e.g., for VGA, around 25 MHz), and managing timing of the testbench to cover all edge cases, such as reset behavior, synchronization pulse generation, and pixel color changes. By analyzing the waveform output, you can verify that the design generates the expected pixel colors and sync pulses, ensuring it will work correctly when synthesized onto the FPGA.
 ### **Synthesis**
 Describe the synthesis and implementation processes. Consider including 1/2 useful screenshot(s). Guideline: 1/2 short paragraphs.
-The synthesis process in Vivado translates the Verilog design into a gate-level representation, optimizing the design for the target FPGA. This step involves mapping the high-level Verilog code into logical elements such as LUTs, flip-flops, and other resources available in the FPGA. During synthesis, Vivado checks for any syntax or logical errors and provides an estimate of the design’s resource utilization, such as the number of LUTs, registers, and I/O pins.
+The synthesis process in Vivado translates the Verilog design into a gate-level representation, optimizing the design for the target FPGA. This step involves mapping the high-level Verilog code into logical elements such as LUTs, flip-flops, and other resources available in the FPGA. During synthesis, Vivado checks for any syntax or logical errors and provides an estimate of the design’s resource utilization, such as the number of LUTs, registers, and I/O pins. This is the synthesis report that I recieved after running synthesis:
+
+![synthesis report](https://github.com/user-attachments/assets/356f5729-3b29-4139-92d3-01e9571c5e84)
 
 The implementation process follows synthesis and involves placing the logic elements into specific locations on the FPGA and routing the connections between them. Vivado generates the final layout of the design, ensuring timing constraints (like setup and hold times) are met. Implementation also includes bitstream generation, which produces the configuration file that will program the FPGA. Once the bitstream is generated, the FPGA can be programmed, and the design can be tested on actual hardware.
+This is a picture of the circuit 
 ### **Demonstration**
 Perhaps add a picture of your demo. Guideline: 1/2 sentences.
 
@@ -51,6 +58,10 @@ Describe the synthesis & implementation outputs for your design, are there any d
 When synthesizing and implementing the original ColourStripes design, Vivado would generate a bitstream that configures the FPGA to output colored stripes based on row and column positions. The synthesis output includes resource usage estimates (such as LUTs, flip-flops, and I/Os), while implementation provides the placement and routing of these resources, ultimately creating the bitstream file used to program the FPGA.
 
 After re-creating the VGAColourStripes to display the images of the sun and the moon every second the complexity has increased.  Instead of a simple row-based color assignment, additional logic would be needed to handle the switching of image patterns over time. This could involve a counter to track time (1-second intervals), and a more complex pixel-by-pixel pattern generator for each image. As a result, the synthesis output would likely show an increase in resource usage, particularly in terms of logic elements and possibly memory usage. The implementation would also involve more routing due to the additional control logic, possibly impacting timing constraints and the overall design's performance.
+This is a picture of the circuit that my code created in the implemented design:
+![implemented design](https://github.com/user-attachments/assets/88f61e60-6fd3-43d4-8e8b-abfe0495cebe)
+
+
 ### **Demonstration**
 This is my working image that I made of the sun and the moon: It changes every second between day and night displaying the sun and the moon.
 If you get your own 
