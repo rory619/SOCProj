@@ -66,14 +66,19 @@ After re-creating the VGAColourStripes to display the images of the sun and the 
 Below is the synthesised design that was generated from my code:
 ![synthesised design](https://github.com/user-attachments/assets/0968074f-6f53-44ba-8daf-710cebb1f3dc)
 
+This is a more zoomed in version of the synthesised design:
+![circuit zoomed in](https://github.com/user-attachments/assets/7b0156bd-66b8-4140-9513-3c97da151c64)
+
 
 
 ### **Demonstration**
 This is my working image that I made of the sun and the moon: It changes every second between day and night displaying the sun and the moon.
 If you get your own 
 design working on the Basys3 board, take a picture! Guideline: 1-2 sentences.
-![1733826428982](https://github.com/user-attachments/assets/7f48c107-9099-41d6-bbc1-940092837dc1)
-![1733826428979](https://github.com/user-attachments/assets/47fe1bdc-47fb-4f47-918e-83cfbe301b83)
+![1733846094350](https://github.com/user-attachments/assets/bf1b10af-68d6-403c-ac26-1604c49c3d60)
+![1733846094352](https://github.com/user-attachments/assets/1d0e0fcf-3f03-45e3-a6ca-9641ea46f727)
+
+
 ## **More Markdown Basics**
 This is a paragraph. Add an empty line to start a new paragraph.
 
