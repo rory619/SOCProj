@@ -11,12 +11,12 @@ I am adding a test sentence here at 13:24 on 03/12/24.
 
 ## **Template VGA Design**
 ### **Project Set-Up**
-I am using a VGA Colour stripes file to change the picture that is being generated onto the screen
+I am using a VGA Colour stripes file in VIVADO to change the picture that is being generated onto the screen. 
 Summarise the project set-up and design flow. Include a screenshot of your own set-up, for example see the image of my Project Summary window below. Guideline 1 short paragraph.
 ![Screenshot 2024-12-10 130838](https://github.com/user-attachments/assets/dd7d259b-340a-4bc8-baed-45240e5426dd)
 
 ### **Template Code**
-For the original colour stripes file, the module generates vertical stripes based on the row number on a VGA screen. Each stripe has a different color, cycling through black, blue, green, cyan, red, magenta, yellow, and white. The logic checks the row position (row) and determines the color to display for that row. The output colors are updated based on the clock, with asynchronous reset behavior to ensure the RGB values are initially set to black.
+For the original colour stripes file, the module generates vertical stripes based on the row number on a VGA screen. Each stripe has a different color, cycling through black, blue, green, cyan, red, magenta, yellow, and white. The logic checks the row position (row) and determines the color to display for that row. The output colors are updated based on the clock, with asynchronous reset behavior to ensure the RGB values are initially set to black. It will display several different stripes to the screen.
 Outline the structure and design of the Verilog code templates you were given. What do they do? Include reference to how a VGA interface works. Guideline: 2/3 short paragraphs, consider including screenshot(s).
 This is the waveform generated from the behavioural simulation after running simulation:
 
@@ -39,7 +39,9 @@ The synthesis process in Vivado translates the Verilog design into a gate-level 
 ![synthesis report](https://github.com/user-attachments/assets/356f5729-3b29-4139-92d3-01e9571c5e84)
 
 The implementation process follows synthesis and involves placing the logic elements into specific locations on the FPGA and routing the connections between them. Vivado generates the final layout of the design, ensuring timing constraints (like setup and hold times) are met. Implementation also includes bitstream generation, which produces the configuration file that will program the FPGA. Once the bitstream is generated, the FPGA can be programmed, and the design can be tested on actual hardware.
-This is a picture of the circuit 
+This is a picture of the circuit that my code created:
+
+![implemented design](https://github.com/user-attachments/assets/88f61e60-6fd3-43d4-8e8b-abfe0495cebe)
 ### **Demonstration**
 Perhaps add a picture of your demo. Guideline: 1/2 sentences.
 
@@ -47,7 +49,7 @@ Perhaps add a picture of your demo. Guideline: 1/2 sentences.
 My idea was to create a checkered flag, but I got as far as changing the stripes to horizontal, then I decided to change it to create two alterating images of the sun and the moon that changes every second. I started by making just the sun, but at this stage I needed to research to find out more information to incorporate the rotation between the 2 images. 
 Introduce your own design idea. Consider how complex/achievabble this might be or otherwise. Reference any research you do online (use hyperlinks).
 ### **Code Adaptation**
-I have adapted the code by creating a series of if statements to generate the alternating images. I used ChatGPT to give me a better idea of what direction I had to go to get my vision working. I asked it how I would alter the code I already have to generate an alterating image and the sun and the moon and I recieved the neccesary information in order to get it working.
+I have adapted the code by creating a series of if statements to generate the alternating images. I used ChatGPT to give me a better idea of what direction I had to go to get my vision working. I asked it how I would alter the code I already have to generate an alterating image and the sun and the moon and I recieved the neccesary information in order to get it working. Now I have 2 different images that change every second to the sun with a grass floor and the moon with stars surrounding it I have the sun and moon dimensions in paramaters and I used reg to set a counter to shift over a period of time, for the position of the sun and the moon and to set a flag for day and night. Im using  if (day_night == 1'b1) for declaring sun logic and  if (day_night == 1'b0) begin for moon logic.
 Briefly show how you changed the template code to display a different image. Demonstrate your understanding. Guideline: 1-2 short paragraphs.
 
 ### **Simulation**
@@ -58,8 +60,12 @@ Describe the synthesis & implementation outputs for your design, are there any d
 When synthesizing and implementing the original ColourStripes design, Vivado would generate a bitstream that configures the FPGA to output colored stripes based on row and column positions. The synthesis output includes resource usage estimates (such as LUTs, flip-flops, and I/Os), while implementation provides the placement and routing of these resources, ultimately creating the bitstream file used to program the FPGA.
 
 After re-creating the VGAColourStripes to display the images of the sun and the moon every second the complexity has increased.  Instead of a simple row-based color assignment, additional logic would be needed to handle the switching of image patterns over time. This could involve a counter to track time (1-second intervals), and a more complex pixel-by-pixel pattern generator for each image. As a result, the synthesis output would likely show an increase in resource usage, particularly in terms of logic elements and possibly memory usage. The implementation would also involve more routing due to the additional control logic, possibly impacting timing constraints and the overall design's performance.
-This is a picture of the circuit that my code created in the implemented design:
-![implemented design](https://github.com/user-attachments/assets/88f61e60-6fd3-43d4-8e8b-abfe0495cebe)
+
+
+
+Below is the synthesised design that was generated from my code:
+![synthesised design](https://github.com/user-attachments/assets/0968074f-6f53-44ba-8daf-710cebb1f3dc)
+
 
 
 ### **Demonstration**
