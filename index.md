@@ -89,6 +89,3 @@ This is my working image that I made of the sun and the moon: It changes every s
 [5] Digilent, "Basys 3 FPGA Board Reference Manual," Digilent, [Online]. Available: https://reference.digilentinc.com.
 
 Hyperlinks look like this: [GitHub Help](https://help.github.com/).
-
-
-<img src="https://raw.githubusercontent.com/melgineer/fpga-vga-verilog/main/docs/assets/images/VGAPrjSrcs.png">
