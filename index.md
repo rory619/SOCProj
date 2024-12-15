@@ -5,13 +5,14 @@ tags: fpga vga verilog
 categories: demo
 ---
 
-Introduction: My name is Rory O Loughlin and this is my 3rd year SOC project that I made and coded and I have made a unique image using vivado to generate to the screen. I have created an alteration between a sun and a moon that changes every sesond from day to night. This involved changing the VGAColourStripes code to create a unique image. 
+## **Introduction**
+My name is Rory O Loughlin and this is my 3rd year SOC project that I made and coded and I have made a unique image using vivado to generate to the screen. I have created an alteration between a sun and a moon that changes every sesond from day to night. This involved changing the VGAColourStripes code to create a unique image. 
 
 
 
 ## **Template VGA Design**
 ### **Project Set-Up**
-I am using a VGA Colour stripes file in VIVADO to change the picture that is being generated onto the screen. 
+I am using a VGA Colour stripes file as a base to work with in VIVADO to change the picture that is being generated onto the screen. 
 
 ![Screenshot 2024-12-10 130838](https://github.com/user-attachments/assets/dd7d259b-340a-4bc8-baed-45240e5426dd)
 
@@ -46,8 +47,8 @@ This is a picture of the circuit that my code created:
 My final VGA image consisted of two images of the sun with grass on the bottom of the screen alternating with the moon with stars in the background. I started off with the sun and the moon alone changing every second, then I added some images in the background to make the images more realistic.
 
 ## **My VGA Design Edit**
-My idea was to create a checkered flag, but I got as far as changing the stripes to horizontal, then I decided to change it to create two alterating images of the sun and the moon that changes every second. I started by making just the sun, but at this stage I needed to research to find out more information to incorporate the rotation between the 2 images. This idea was achievable and I used Chat GPT to give me some ideas to help me better understand how I could create an image to change every second.
-Introduce your own design idea. Consider how complex/achievabble this might be or otherwise. Reference any research you do online (use hyperlinks).
+My idea was to create a checkered flag, but I got as far as changing the stripes to horizontal, then I decided to change it to create two alterating images of the sun and the moon that changes every second. I started by making just the sun, but at this stage I needed to research to find out more information to incorporate the rotation between the 2 images. This idea was achievable and I used Chat GPT to give me some ideas to help me better understand how I could create an image to change every second. I would also need to understand how to create spheres by changing the code in the colour stripes file.
+
 ### **Code Adaptation**
 I have adapted the code by creating a series of if statements to generate the alternating images. I used ChatGPT to give me a better idea of what direction I had to go to get my vision working. I asked it how I would alter the code I already have to generate an alterating image and the sun and the moon and I recieved the neccesary information in order to get it working. Now I have 2 different images that change every second to the sun with a grass floor and the moon with stars surrounding it I have the sun and moon dimensions in paramaters and I used reg to set a counter to shift over a period of time, for the position of the sun and the moon and to set a flag for day and night. Im using  if (day_night == 1'b1) for declaring sun logic and  if (day_night == 1'b0) begin for moon logic.
 
