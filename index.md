@@ -78,6 +78,19 @@ design working on the Basys3 board, take a picture! Guideline: 1-2 sentences.
 ![1733846094350](https://github.com/user-attachments/assets/bf1b10af-68d6-403c-ac26-1604c49c3d60)
 ![1733846094352](https://github.com/user-attachments/assets/1d0e0fcf-3f03-45e3-a6ca-9641ea46f727)
 
+### **References**
+[1] Xilinx, "Vivado Design Suite User Guide," Xilinx, [Online]. Available: https://www.xilinx.com/support/documentation-navigation/design-hubs.html.
+
+[2] D. Heath, "VGA Hardware and Interfacing," 2008. [Online]. Available: https://www.cs.unc.edu/~davemc/notes/vga/.
+
+[3] C. H. Roth and L. Johnson, *Digital System Design Using Verilog*, PWS Publishing Company, 2005.
+
+[4] S. Palnitkar, *Verilog HDL: A Guide to Digital Design and Synthesis*, 2nd ed., Pearson Prentice Hall, 2003.
+
+[5] Digilent, "Basys 3 FPGA Board Reference Manual," Digilent, [Online]. Available: https://reference.digilentinc.com.
+
+
+
 
 ## **More Markdown Basics**
 This is a paragraph. Add an empty line to start a new paragraph.
