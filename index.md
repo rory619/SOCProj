@@ -87,5 +87,3 @@ This is my working image that I made of the sun and the moon: It changes every s
 [4] S. Palnitkar, *Verilog HDL: A Guide to Digital Design and Synthesis*, 2nd ed., Pearson Prentice Hall, 2003.
 
 [5] Digilent, "Basys 3 FPGA Board Reference Manual," Digilent, [Online]. Available: https://reference.digilentinc.com.
-
-Hyperlinks look like this: [GitHub Help](https://help.github.com/).
